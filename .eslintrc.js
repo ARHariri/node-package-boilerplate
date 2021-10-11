@@ -4,14 +4,10 @@
 
 module.exports = {
   env: {
-    browser: true,
     es6: true,
     node: true,
   },
   settings: {
-    react: {
-      version: 'detect',
-    },
     linkComponents: [{ name: 'Link', linkAttribute: 'to' }],
   },
   parser: '@typescript-eslint/parser',
@@ -29,31 +25,23 @@ module.exports = {
     '@typescript-eslint',
     'prefer-arrow',
     'unicorn',
-    'react-hooks',
     'import',
     'jest',
     'jsdoc',
     'prettier',
   ],
   extends: [
-    'plugin:react/recommended',
     'plugin:jsdoc/recommended',
     'plugin:jest/recommended',
     'plugin:jest/style',
     'plugin:import/typescript',
-    'plugin:prettier/recommended',
-    'prettier/@typescript-eslint', // eslint-config-prettier TypeScript disables all formating rules
+    'plugin:prettier/recommended'
   ],
   rules: {
-    // react rules
-    // react propTypes are not needed in a TypeScript only environment
-    'react/prop-types': 'off',
-
     // enabled typescript rules
     '@typescript-eslint/adjacent-overload-signatures': 'error',
     '@typescript-eslint/array-type': 'error',
     '@typescript-eslint/ban-types': 'error',
-    '@typescript-eslint/class-name-casing': 'error',
     '@typescript-eslint/no-empty-interface': 'error',
     '@typescript-eslint/no-misused-new': 'error',
     '@typescript-eslint/no-namespace': 'error',
